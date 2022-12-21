@@ -4,11 +4,7 @@ export const Banner = () => {
 			<div>
 				<h1 className="text-7xl">bytes Daily Blog</h1>
 				<h2 className="mt-5 md:mt-0">
-					Welcome to
-					<span className="underline decoration-4 decoration-brand">
-						Every Developers
-					</span>{" "}
-					favourite blog in the Devosphere
+					This is where I showcase my Journey
 				</h2>
 			</div>
 			<p className="mt-5 md:mt-2 text-gray-400 max-w-sm">
