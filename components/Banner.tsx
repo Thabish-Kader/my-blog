@@ -1,23 +1,19 @@
 export const Banner = () => {
 	return (
-		<div className="flex justify-between items-center px-10 py-5">
-			{/* left side */}
-			<div className="flex flex-col space-y-2">
-				<h1 className="text-7xl font-bold">
-					<span className="text-brand">byte's</span> Blog
-				</h1>
-				<p className="font-bold text-xl">
-					Welcome to my blog. This is where I share my experienes
-				</p>
-			</div>
-
-			{/* right side */}
+		<div className="flex flex-col lg:flex-row lg:space-x-5 justify-between font-bold px-10 py-5 mb-10">
 			<div>
-				<p className="text-gray-500 font-bold max-w-sm">
-					Latest Tech| New Features | Weekly Youtube Vidoes |
-					Developer News and More
-				</p>
+				<h1 className="text-7xl">bytes Daily Blog</h1>
+				<h2 className="mt-5 md:mt-0">
+					Welcome to
+					<span className="underline decoration-4 decoration-brand">
+						Every Developers
+					</span>{" "}
+					favourite blog in the Devosphere
+				</h2>
 			</div>
+			<p className="mt-5 md:mt-2 text-gray-400 max-w-sm">
+				Tech News | Developer News | Projects Experiences
+			</p>
 		</div>
 	);
 };
