@@ -6,7 +6,7 @@ type Props = {
 };
 
 export const PreviewBlogList = ({ query }: Props) => {
-	const posts = usePreview(null, query);
+	const posts = usePreview(process.env.NEXT_PUBLIC_SANITY_TOKEN!, query);
 	// console.log(`Loading posts...${posts}`);
 	return <Blogs posts={posts} />;
 };

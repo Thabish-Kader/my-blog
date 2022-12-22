@@ -1,9 +1,28 @@
-const Home = () => {
-	return (
-		<div>
-			<hr className="bg-brand h-1" />
-		</div>
-	);
+import { previewData } from "next/headers";
+import { groq } from "next-sanity";
+import { client } from "../../lib/sanity.client";
+import PreviewSuspense from "../../components/PreviewSuspense";
+import { PreviewBlogList } from "../../components/PreviewBlogList";
+import Blogs from "../../components/Blogs";
+const query = groq`
+*[_type == 'post']{
+  ...,
+  categories[]->,
+  author->,
+}  | order(_createdAt desc)
+`;
+
+const Home = async () => {
+	if (previewData()) {
+		return (
+			<PreviewSuspense fallback="Loading...">
+				<PreviewBlogList query={query} />
+			</PreviewSuspense>
+		);
+	}
+
+	const posts = await client.fetch(query);
+	return <Blogs posts={posts} />;
 };
 
 export default Home;
