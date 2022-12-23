@@ -1,9 +1,12 @@
-import React from "react";
+type Props = {
+	params: {
+		slug: string;
+	};
+};
 
-type Props = {};
-
-const Post = (props: Props) => {
-	return <div>Post</div>;
+const Post = ({ params }: Props) => {
+	console.log(params.slug);
+	return <div>hello</div>;
 };
 
 export default Post;
