@@ -1,5 +1,7 @@
+import { PortableText } from "@portabletext/react";
 import { groq } from "next-sanity";
 import Image from "next/image";
+import CustomText from "../../../../components/CustomText";
 import { client } from "../../../../lib/sanity.client";
 import { urlFor } from "../../../../lib/urlFor";
 import post from "../../../../schemas/post";
@@ -44,6 +46,7 @@ const Post = async ({ params }: Props) => {
 									)}
 								</p>
 							</div>
+							{/* author info */}
 							<div className="flex items-center">
 								<Image
 									src={urlFor(post.author.image).url()}
@@ -64,7 +67,7 @@ const Post = async ({ params }: Props) => {
 							</p>
 							{post.categories.map((category) => (
 								<div
-									className="flex space-x-2 justify-end"
+									className="flex space-x-2 justify-end mt-10"
 									key={category._id}
 								>
 									<p className="bg-black px-2 rounded-full text-white text-center">
@@ -81,6 +84,10 @@ const Post = async ({ params }: Props) => {
 						className="object-cover opacity-20 bg-blur"
 					/>
 				</div>
+			</section>
+
+			<section>
+				<PortableText value={post.body} components={CustomText} />
 			</section>
 		</article>
 	);
