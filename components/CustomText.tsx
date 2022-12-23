@@ -53,7 +53,7 @@ export const CustomText = {
 			// 	: undefined;
 			return (
 				<Link
-					href={value.href}
+					href={value.href ?? ""}
 					// rel={rel}
 					className="underline decoration-purple-500 hover:decoration-black"
 				>

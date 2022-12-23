@@ -96,7 +96,7 @@ const Post = async ({ params }: Props) => {
 				</div>
 			</section>
 
-			<section>
+			<section className="p-10">
 				<PortableText value={post.body} components={CustomText} />
 			</section>
 		</article>

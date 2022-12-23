@@ -4,6 +4,9 @@ import { client } from "../../lib/sanity.client";
 import PreviewSuspense from "../../components/PreviewSuspense";
 import { PreviewBlogList } from "../../components/PreviewBlogList";
 import Blogs from "../../components/Blogs";
+
+export const revalidate = 60;
+
 const query = groq`
 *[_type == 'post']{
   ...,
