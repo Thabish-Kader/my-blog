@@ -48,13 +48,13 @@ export const CustomText = {
 
 	marks: {
 		link: ({ children, value }: any) => {
-			const rel = !value.href.startsWith("/")
-				? "noreferrer noopener"
-				: undefined;
+			// const rel = !value.href.startsWith("/")
+			// 	? "noreferrer noopener"
+			// 	: undefined;
 			return (
 				<Link
 					href={value.href}
-					rel={rel}
+					// rel={rel}
 					className="underline decoration-purple-500 hover:decoration-black"
 				>
 					{children}

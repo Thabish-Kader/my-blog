@@ -11,18 +11,29 @@ type Props = {
 		slug: string;
 	};
 };
+export const revalidate = 60;
+export async function generateStaticParams() {
+	const query = groq`
+	*[_type == 'post' ]{
+		slug,
+	}
+	`;
+	const posts: Post[] = await client.fetch(query);
 
-const query = groq`
-*[_type == 'post' && slug.current == $slug][0]{
-  ...,
-  categories[]->,
-  author->,
-}  
-`;
+	return posts.map((post) => ({
+		slug: post.slug.current,
+	}));
+}
 
 const Post = async ({ params }: Props) => {
+	const query = groq`
+	*[_type == 'post' && slug.current == $slug][0]{
+	  ...,
+	  categories[]->,
+	  author->,
+	}  
+	`;
 	const post: Post = await client.fetch(query, params);
-
 	return (
 		<article>
 			{/* banner */}
@@ -62,19 +73,18 @@ const Post = async ({ params }: Props) => {
 						</div>
 
 						<div className="mt-10 flex flex-col">
-							<p className="text-white font-extrabold">
+							<p className="text-white font-extrabold flex-1">
 								{post.description}
 							</p>
-							{post.categories.map((category) => (
-								<div
-									className="flex space-x-2 justify-end mt-10"
-									key={category._id}
-								>
-									<p className="bg-black px-2 rounded-full text-white text-center">
-										{category.title}
-									</p>
-								</div>
-							))}
+							<div className="flex justify-end space-x-2">
+								{post.categories.map((category) => (
+									<div className=" mt-10" key={category._id}>
+										<p className="bg-black px-2 rounded-full text-white text-center">
+											{category.title}
+										</p>
+									</div>
+								))}
+							</div>
 						</div>
 					</div>
 					<Image
