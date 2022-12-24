@@ -41,3 +41,17 @@ But i was makeing a request to Post table so the schema was not matching. After 
 -   [Slugs and query](https://www.sanity.io/docs/slug-type)
 
 -   [Portable Text](https://www.npmjs.com/package/@portabletext/react)
+
+### ScreenShots
+<img width="1680" alt="Screen Shot 2022-12-24 at 10 11 26 AM" src="https://user-images.githubusercontent.com/76642519/209423996-36850f1f-a7f4-4106-8339-484259471441.png">
+
+<img width="1680" alt="Screen Shot 2022-12-24 at 10 11 44 AM" src="https://user-images.githubusercontent.com/76642519/209423964-faba5122-8f2e-4fc7-8ed4-c94ee15451e7.png">
+
+<img width="1680" alt="Screen Shot 2022-12-24 at 10 12 06 AM" src="https://user-images.githubusercontent.com/76642519/209423973-3ae381f4-8228-45cc-8867-af4a48ac53cb.png">
+
+<img width="1680" alt="Screen Shot 2022-12-24 at 10 14 02 AM" src="https://user-images.githubusercontent.com/76642519/209424038-567fd63c-5eab-4d95-a6f0-30352df672af.png">
+
+
+
+
+
