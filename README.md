@@ -8,7 +8,7 @@
 
 <img align="left" alt="Tailwind" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" />
 
-<img align="left" alt="sanity" width="30px" style="padding-right:10px;" src="https://cdn.worldvectorlogo.com/logos/sanity.svg" />
+<img align="left" alt="sanity" width="30px" style="padding-right:10px;" src="https://pics.freeicons.io/uploads/icons/png/17521277461551942823-512.png" />
 
 <br/>
 <br/>
